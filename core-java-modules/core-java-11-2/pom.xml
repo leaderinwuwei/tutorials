@@ -4,7 +4,6 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>core-java-11-2</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
     <name>core-java-11-2</name>
     <packaging>jar</packaging>
 
@@ -69,7 +68,6 @@
     <properties>
         <maven.compiler.source.version>11</maven.compiler.source.version>
         <maven.compiler.target.version>11</maven.compiler.target.version>
-        <guava.version>29.0-jre</guava.version>
         <mockserver.version>5.11.1</mockserver.version>
         <jakarta.ws-api.version>3.0.1</jakarta.ws-api.version>
         <jaxws-maven-plugin.version>3.0.2</jaxws-maven-plugin.version>

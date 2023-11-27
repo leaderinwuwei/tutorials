@@ -2,17 +2,20 @@ package com.baeldung.persistence.model;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedNativeQueries;
-import javax.persistence.NamedNativeQuery;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.NamedNativeQueries;
+import jakarta.persistence.NamedNativeQuery;
+import jakarta.persistence.NamedStoredProcedureQuery;
+import jakarta.persistence.ParameterMode;
+import jakarta.persistence.StoredProcedureParameter;
 
 import org.hibernate.envers.Audited;
 
@@ -20,6 +23,20 @@ import org.hibernate.envers.Audited;
   @NamedNativeQuery(name = "callGetAllFoos", query = "CALL GetAllFoos()", resultClass = Foo.class),
   @NamedNativeQuery(name = "callGetFoosByName", query = "CALL GetFoosByName(:fooName)", resultClass = Foo.class)
 })
+@NamedStoredProcedureQuery(
+		  name="GetAllFoos",
+		  procedureName="GetAllFoos",
+		  resultClasses = { Foo.class }
+		)
+@NamedStoredProcedureQuery(
+		  name="GetFoosByName",
+		  procedureName="GetFoosByName",
+		  resultClasses = { Foo.class },
+		  parameters={
+		    @StoredProcedureParameter(name="fooName", type=String.class, mode=ParameterMode.IN)
+		  }
+		)
+
 @Entity
 @Audited
 // @Proxy(lazy = false)

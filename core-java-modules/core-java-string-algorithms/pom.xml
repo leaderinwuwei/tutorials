@@ -4,7 +4,6 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>core-java-string-algorithms</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
     <name>core-java-string-algorithms</name>
     <packaging>jar</packaging>
 
@@ -15,11 +14,6 @@
     </parent>
 
     <dependencies>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
-        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -58,7 +52,6 @@
     </build>
 
     <properties>
-        <guava.version>27.0.1-jre</guava.version>
         <ahocorasick.version>0.4.0</ahocorasick.version>
         <emoji-java.version>4.0.0</emoji-java.version>
     </properties>

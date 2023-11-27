@@ -11,9 +11,8 @@
 
     <parent>
         <groupId>com.baeldung</groupId>
-        <artifactId>parent-boot-2</artifactId>
+        <artifactId>spring-security-modules</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../../parent-boot-2</relativePath>
     </parent>
 
     <dependencies>
@@ -179,7 +178,6 @@
                 </plugins>
             </build>
         </profile>
-
         <profile>
             <id>entryPoints</id>
             <build>
@@ -218,8 +216,8 @@
 
     <properties>
         <start-class>com.baeldung.roles.custom.Application</start-class>
-        <!--If you want to run the example with the voters comment the tag above and uncomment the one 
-            below -->
+        <!--If you want to run the example with the voters comment the tag above and uncomment the one -->
+        <!-- below -->
         <!--<start-class>com.baeldung.roles.voter.VoterApplication</start-class> -->
         <taglibs-standard.version>1.1.2</taglibs-standard.version>
         <cargo-maven2-plugin.version>1.6.1</cargo-maven2-plugin.version>

@@ -10,8 +10,7 @@ The "Learn Spring Security" Classes: http://github.learnspringsecurity.com
 
 ### Relevant Articles: 
 
-- [Integration Testing with the Maven Cargo plugin](https://www.baeldung.com/integration-testing-with-the-maven-cargo-plugin)
-- [Metrics for your Spring REST API](https://www.baeldung.com/spring-rest-api-metrics)
+- [Integration Testing With the Maven Cargo Plugin](https://www.baeldung.com/integration-testing-with-the-maven-cargo-plugin)
 - [Testing Exceptions with Spring MockMvc](https://www.baeldung.com/spring-mvc-test-exceptions)
 
 ### Build the Project

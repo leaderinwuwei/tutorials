@@ -6,26 +6,19 @@
     <groupId>com.baeldung.maven.plugin</groupId>
     <artifactId>host-maven-repo-example</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <url>https://github.com/sgrverma23/host-maven-repo-example.git</url>
+    <url>https://github.com/${repository-owner}/${repository-name}.git</url>
     <scm>
-        <url>https://github.com/sgrverma23/host-maven-repo-example.git</url>
-        <connection>scm:git:git@github.com:sgrverma23/host-maven-repo-example.git</connection>
-        <developerConnection>scm:git:git@github.com:sgrverma23/host-maven-repo-example.git</developerConnection>
+        <url>https://github.com/${repository-owner}/${repository-name}.git</url>
+        <connection>scm:git:git@github.com:${repository-owner}/${repository-name}.git</connection>
+        <developerConnection>scm:git:git@github.com:${repository-owner}/${repository-name}.git</developerConnection>
     </scm>
-    <distributionManagement>
-        <repository>
-            <id>internal.repo</id>
-            <name>Temporary Staging Repository</name>
-            <url>file://${project.build.directory}/mvn-artifact</url>
-        </repository>
-    </distributionManagement>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>${maven-source-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -38,18 +31,18 @@
             <plugin>
                 <groupId>com.github.github</groupId>
                 <artifactId>site-maven-plugin</artifactId>
-                <version>0.12</version>
+                <version>${site-maven-plugin.version}</version>
                 <configuration>
                     <message>Maven artifacts for ${project.version}</message>
                     <noJekyll>true</noJekyll>
                     <outputDirectory>${project.build.directory}</outputDirectory>
-                    <branch>refs/heads/main</branch>
+                    <branch>refs/heads/${branch-name}</branch>
                     <includes>
                         <include>**/*</include>
                     </includes>
                     <merge>true</merge>
-                    <repositoryName>host-maven-repo-example</repositoryName>
-                    <repositoryOwner>sgrverma23</repositoryOwner>
+                    <repositoryName>${repository-name}</repositoryName>
+                    <repositoryOwner>${repository-owner}</repositoryOwner>
                     <server>github</server>
                 </configuration>
                 <executions>
@@ -63,7 +56,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-deploy-plugin</artifactId>
-                <version>2.8.2</version>
+                <version>${maven-deploy-plugin.version}</version>
                 <configuration>
                     <altDeploymentRepository>
                         internal.repo::default::file://${project.build.directory}/mvn-artifact
@@ -73,7 +66,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>${maven-source-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -89,7 +82,7 @@
     <repositories>
         <repository>
             <id>PROJECT-REPO-URL</id>
-            <url>https://github.com/sgrverma23/host-maven-repo-example/main</url>
+            <url>https://github.com/${repository-owner}/${repository-name}/${branch-name}</url>
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>
@@ -97,10 +90,26 @@
         </repository>
     </repositories>
 
+    <distributionManagement>
+        <repository>
+            <id>internal.repo</id>
+            <name>Temporary Staging Repository</name>
+            <url>file://${project.build.directory}/mvn-artifact</url>
+        </repository>
+    </distributionManagement>
+
     <properties>
+        <!--Put your own properties -->
+        <repository-owner>Put-repo-owner</repository-owner>
+        <repository-name>Put-repository-name</repository-name>
+        <branch-name>Put-branch-name</branch-name>
         <github.global.server>github</github.global.server>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <maven-source-plugin.version>3.1.0</maven-source-plugin.version>
+        <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+        <maven-source-plugin.version>3.1.0</maven-source-plugin.version>
+        <site-maven-plugin.version>0.12</site-maven-plugin.version>
     </properties>
 
 </project>

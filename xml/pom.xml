@@ -29,7 +29,6 @@
             <artifactId>jericho-html</artifactId>
             <version>${jericho.version}</version>
         </dependency>
-
         <!-- xml libraries -->
         <dependency>
             <groupId>org.dom4j</groupId>
@@ -182,6 +181,13 @@
                         </goals>
                     </execution>
                 </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.bcel</groupId>
+                        <artifactId>bcel</artifactId>
+                        <version>${bcel.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -317,8 +323,8 @@
                         </configuration>
                     </plugin>
                     <plugin>
-                        <!-- NOTE: We don't need a groupId specification because the group is org.apache.maven.plugins 
-                            ...which is assumed by default. -->
+                        <!-- NOTE: We don't need a groupId specification because the group is org.apache.maven.plugins -->
+                        <!--...which is assumed by default. -->
                         <artifactId>maven-assembly-plugin</artifactId>
                         <configuration>
                             <archiveBaseDirectory>${project.basedir}</archiveBaseDirectory>
@@ -366,9 +372,10 @@
         <mustache.version>0.9.6</mustache.version>
         <!-- maven plugins -->
         <maven-jibx-plugin.version>1.3.1</maven-jibx-plugin.version>
-        <jsoup.version>1.14.3</jsoup.version>
+        <jsoup.version>1.16.2</jsoup.version>
         <htmlcleaner.version>2.25</htmlcleaner.version>
         <jericho.version>3.4</jericho.version>
+        <bcel.version>6.7.0</bcel.version>
     </properties>
 
 </project>

@@ -115,10 +115,9 @@
             </plugin>
             <plugin>
                 <groupId>org.codehaus.cargo</groupId>
-                <artifactId>cargo-maven2-plugin</artifactId>
-                <version>${cargo-maven2-plugin.version}</version>
+                <artifactId>cargo-maven3-plugin</artifactId>
+                <version>${cargo-maven3-plugin.version}</version>
                 <configuration>
-                    <wait>true</wait>
                     <container>
                         <containerId>jetty9x</containerId>
                         <type>embedded</type>
@@ -137,13 +136,13 @@
 
     <properties>
         <spring-data.version>2.3.2.RELEASE</spring-data.version>
-        <org.thymeleaf-version>3.0.11.RELEASE</org.thymeleaf-version>
+        <org.thymeleaf-version>3.1.2.RELEASE</org.thymeleaf-version>
         <org.thymeleaf.extras-version>3.0.4.RELEASE</org.thymeleaf.extras-version>
         <thymeleaf-layout-dialect.version>2.4.1</thymeleaf-layout-dialect.version>
         <javax.validation-version>2.0.1.Final</javax.validation-version>
-        <hibernate-validator.version>6.0.11.Final</hibernate-validator.version>
+        <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
         <!-- Maven plugins -->
-        <cargo-maven2-plugin.version>1.6.1</cargo-maven2-plugin.version>
+        <cargo-maven3-plugin.version>1.9.9</cargo-maven3-plugin.version>
     </properties>
 
 </project>

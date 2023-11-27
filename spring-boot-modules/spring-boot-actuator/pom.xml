@@ -4,14 +4,15 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>spring-boot-actuator</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <name>spring-boot-actuator</name>
     <description>This is simple boot application for Spring boot actuator test</description>
-    <version>0.0.1-SNAPSHOT</version>
 
     <parent>
-        <groupId>com.baeldung.spring-boot-modules</groupId>
-        <artifactId>spring-boot-modules</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <groupId>com.baeldung</groupId>
+        <artifactId>parent-boot-3</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../../parent-boot-3</relativePath>
     </parent>
 
     <dependencies>
@@ -22,6 +23,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -50,6 +55,10 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.awaitility</groupId>
+            <artifactId>awaitility</artifactId>
         </dependency>
     </dependencies>
 

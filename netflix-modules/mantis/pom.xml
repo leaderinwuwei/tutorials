@@ -23,7 +23,7 @@
         <dependency>
             <groupId>io.mantisrx</groupId>
             <artifactId>mantis-runtime</artifactId>
-            <version>1.2.63</version>
+            <version>${mantis-runtime.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.slf4j</groupId>
@@ -38,7 +38,7 @@
         <dependency>
             <groupId>net.andreinc.mockneat</groupId>
             <artifactId>mockneat</artifactId>
-            <version>0.4.2</version>
+            <version>${mockneat.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -54,6 +54,11 @@
             <artifactId>reactor-netty</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.netflix.spectator</groupId>
+            <artifactId>spectator-api</artifactId>
+            <version>${spectator-api.version}</version>
+        </dependency>
     </dependencies>
 
     <repositories>
@@ -62,5 +67,11 @@
             <url>https://jcenter.bintray.com/</url>
         </repository>
     </repositories>
+
+    <properties>
+        <mantis-runtime.version>2.0.42</mantis-runtime.version>
+        <mockneat.version>0.4.2</mockneat.version>
+        <spectator-api.version>1.6.5</spectator-api.version>
+    </properties>
 
 </project>

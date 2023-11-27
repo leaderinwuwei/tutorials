@@ -1,18 +1,19 @@
 package com.baeldung.mail;
 
-import javax.mail.Authenticator;
-import javax.mail.Message;
-import javax.mail.Multipart;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
 import java.io.File;
 import java.net.URI;
 import java.util.Properties;
+
+import jakarta.mail.Authenticator;
+import jakarta.mail.Message;
+import jakarta.mail.Multipart;
+import jakarta.mail.PasswordAuthentication;
+import jakarta.mail.Session;
+import jakarta.mail.Transport;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeBodyPart;
+import jakarta.mail.internet.MimeMessage;
+import jakarta.mail.internet.MimeMultipart;
 
 public class EmailService {
 
@@ -67,12 +68,17 @@ public class EmailService {
         MimeBodyPart mimeBodyPart = new MimeBodyPart();
         mimeBodyPart.setContent(msg, "text/html; charset=utf-8");
 
+        String msgStyled = "This is my <b style='color:red;'>bold-red email</b> using JavaMailer";
+        MimeBodyPart mimeBodyPartWithStyledText = new MimeBodyPart();
+        mimeBodyPartWithStyledText.setContent(msgStyled, "text/html; charset=utf-8");
+
         MimeBodyPart attachmentBodyPart = new MimeBodyPart();
 
         attachmentBodyPart.attachFile(getFile());
 
         Multipart multipart = new MimeMultipart();
         multipart.addBodyPart(mimeBodyPart);
+        multipart.addBodyPart(mimeBodyPartWithStyledText);
         multipart.addBodyPart(attachmentBodyPart);
 
         message.setContent(multipart);
